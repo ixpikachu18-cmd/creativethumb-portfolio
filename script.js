@@ -93,3 +93,24 @@ window.addEventListener("load", function () {
     });
   }
 });
+
+
+// Mobile navigation safety
+document.addEventListener("click", (event) => {
+  if (
+    window.innerWidth <= 700 &&
+    nav.classList.contains("open") &&
+    !nav.contains(event.target) &&
+    !menuButton.contains(event.target)
+  ) {
+    nav.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+  }
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 700) {
+    nav.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+  }
+});
