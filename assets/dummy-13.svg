@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+    <defs>
+      <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#ec4899"/>
+        <stop offset="1" stop-color="#6d28d9"/>
+      </linearGradient>
+      <radialGradient id="r" cx="75%" cy="25%" r="60%">
+        <stop offset="0" stop-color="#ffffff" stop-opacity=".25"/>
+        <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+      </radialGradient>
+      <filter id="shadow"><feDropShadow dx="0" dy="12" stdDeviation="18" flood-opacity=".35"/></filter>
+    </defs>
+    <rect width="1280" height="720" fill="url(#g)"/>
+    <rect width="1280" height="720" fill="url(#r)"/>
+    <g opacity=".18">
+      <circle cx="1050" cy="170" r="170" fill="#fff"/>
+      <circle cx="1130" cy="610" r="250" fill="#000"/>
+      <path d="M0 590 C280 430 500 710 760 525 S1110 350 1280 430 V720 H0Z" fill="#000"/>
+    </g>
+    <rect x="72" y="70" width="245" height="58" rx="14" fill="#fff" fill-opacity=".94"/>
+    <text x="194" y="108" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="800" fill="#111827">CREATOR</text>
+    <text x="70" y="315" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="92" font-weight="900" fill="#fff" filter="url(#shadow)">THUMBNAIL 13</text>
+    <text x="74" y="390" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#fff" fill-opacity=".84">REPLACE WITH YOUR OWN THUMBNAIL</text>
+    <rect x="72" y="445" width="410" height="92" rx="18" fill="#fff"/>
+    <text x="277" y="505" text-anchor="middle" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="42" font-weight="900" fill="#111827">CLICK-WORTHY</text>
+    <g transform="translate(850 240)">
+      <circle cx="150" cy="150" r="132" fill="#f4b183"/>
+      <circle cx="110" cy="125" r="13" fill="#111827"/>
+      <circle cx="190" cy="125" r="13" fill="#111827"/>
+      <path d="M95 190 Q150 232 210 183" fill="none" stroke="#111827" stroke-width="14" stroke-linecap="round"/>
+      <path d="M65 290 Q150 235 235 290 L275 480 H25Z" fill="#111827"/>
+    </g>
+    </svg>

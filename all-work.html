@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CreativeThumb — All Work</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=4">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=4">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=4">
+
+  <style>
+/* FINAL PORTFOLIO HEADING + ALIGNMENT */
+
+main {
+  padding-top: 18px !important;
+}
+
+/* Heading ko upar aur compact rakhega */
+.heading {
+  width: 100% !important;
+  text-align: center !important;
+  margin: 0 auto 24px !important;
+  padding: 0 !important;
+}
+
+/* PORTFOLIO text */
+.heading h1 {
+  margin: 0 !important;
+
+  font-family: "Bebas Neue", Impact, "Arial Narrow", sans-serif !important;
+  font-size: clamp(58px, 5vw, 82px) !important;
+  font-weight: 400 !important;
+
+  letter-spacing: 10px !important;
+  line-height: 0.95 !important;
+
+  color: #111318 !important;
+  text-align: center !important;
+}
+
+/* Neeche wala light text */
+.heading p {
+  margin: 12px auto 0 !important;
+
+  font-family: "Inter", Arial, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+
+  letter-spacing: 0.5px !important;
+  line-height: 1.4 !important;
+
+  color: #626b7a !important;
+  text-align: center !important;
+}
+
+/* Thumbnails ko heading ke paas laayega */
+.gallery {
+  margin-top: 0 !important;
+  row-gap: 28px !important;
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  main {
+    padding-top: 20px !important;
+  }
+
+  .heading {
+    margin-bottom: 22px !important;
+  }
+
+  .heading h1 {
+    font-size: 48px !important;
+    letter-spacing: 6px !important;
+  }
+
+  .heading p {
+    font-size: 14px !important;
+  }
+}
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: #111318;
+      background:
+        radial-gradient(circle at 10% 5%, rgba(37,99,235,.08), transparent 30%),
+        radial-gradient(circle at 90% 25%, rgba(124,58,237,.07), transparent 30%),
+        #f8fafc;
+    }
+    .topbar {
+      height: 58px;
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 52px;
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid rgba(15,23,42,.12);
+      backdrop-filter: blur(14px);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+      font-weight: 800;
+      text-decoration: none;
+      color: #111318;
+    }
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 900;
+      background: linear-gradient(135deg,#2563eb,#7c3aed);
+    }
+    .topbar nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+    .topbar nav a {
+      color: #17191f;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+    .topbar nav a:hover { color: #2563eb; }
+    main {
+      width: min(calc(100% - 64px), 1820px);
+      margin: 0 auto;
+      padding: 46px 0 70px;
+    }
+    .heading {
+      text-align: center;
+      margin-bottom: 34px;
+    }
+    .eyebrow {
+      margin: 0 0 5px;
+      color: #2563eb;
+      font-size: clamp(34px,4vw,58px);
+      font-weight: 900;
+      letter-spacing: 8px;
+      line-height: 1;
+    }
+    .heading h1 {
+      margin: 0;
+      font-family: Impact, "Arial Narrow", Arial, sans-serif;
+      font-size: clamp(28px,3vw,48px);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+    }
+    .heading p {
+      margin: 13px auto 0;
+      color: #667085;
+      max-width: 670px;
+      line-height: 1.6;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      column-gap: 26px;
+      row-gap: 31px;
+    }
+    .work-card { min-width: 0; }
+    .thumb-button {
+      position: relative;
+      display: block;
+      width: 100%;
+      aspect-ratio: 16/9;
+      padding: 0;
+      overflow: hidden;
+      border: 0;
+      border-radius: 3px;
+      background: #e5e7eb;
+      cursor: pointer;
+      box-shadow: 0 7px 20px rgba(15,23,42,.08);
+    }
+    .thumb-button img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .3s ease, filter .3s ease;
+    }
+    .thumb-button:hover img {
+      transform: scale(1.025);
+      filter: brightness(.75);
+    }
+    .view-label {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-42%);
+      padding: 11px 16px;
+      border: 1px solid rgba(255,255,255,.75);
+      background: rgba(15,23,42,.72);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      opacity: 0;
+      transition: .25s ease;
+    }
+    .thumb-button:hover .view-label {
+      opacity: 1;
+      transform: translate(-50%,-50%);
+    }
+    .dummy-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      padding: 7px 10px;
+      border-radius: 6px;
+      color: #fff;
+      background: rgba(15,23,42,.78);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1.2px;
+    }
+    .meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding-top: 9px;
+    }
+    .meta h2 {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 800;
+    }
+    .meta span {
+      color: #667085;
+      font-size: 12px;
+    }
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      background: rgba(3,7,18,.9);
+    }
+    .modal.open { display: flex; }
+    .modal img {
+      width: min(1280px,94vw);
+      max-height: 88vh;
+      object-fit: contain;
+      box-shadow: 0 24px 80px rgba(0,0,0,.55);
+    }
+    .close {
+      position: absolute;
+      right: 26px;
+      top: 18px;
+      border: 0;
+      background: transparent;
+      color: #fff;
+      font-size: 42px;
+      cursor: pointer;
+    }
+    @media (max-width: 1050px) {
+      .gallery { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      main { width: min(calc(100% - 36px),1820px); }
+    }
+    @media (max-width: 650px) {
+      .topbar { padding: 0 16px; }
+      .topbar nav { gap: 14px; }
+      .topbar nav a { font-size: 10px; letter-spacing: .3px; }
+      .brand { font-size: 14px; }
+      main { width: calc(100% - 22px); padding-top: 32px; }
+      .gallery { grid-template-columns: 1fr; row-gap: 24px; }
+      .eyebrow { letter-spacing: 4px; }
+    }
+  
+
+    /* Match the All Work brand logo to the main index page */
+    .topbar .brand {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      color: #111318 !important;
+      text-decoration: none !important;
+      font-size: 16px !important;
+      font-weight: 800 !important;
+    }
+
+    .topbar .brand-mark {
+      width: 30px !important;
+      height: 30px !important;
+      display: grid !important;
+      place-items: center !important;
+      border-radius: 8px !important;
+      background: linear-gradient(135deg, #2563eb, #7c3aed) !important;
+      color: #ffffff !important;
+      font-size: 12px !important;
+      font-weight: 900 !important;
+      line-height: 1 !important;
+      transform: rotate(-5deg) !important;
+      transform-origin: center !important;
+      box-shadow: 0 5px 12px rgba(79, 70, 229, 0.18) !important;
+    }
+
+    .topbar .brand > span:last-child {
+      color: #111318 !important;
+      font-size: 16px !important;
+      font-weight: 800 !important;
+      letter-spacing: 0 !important;
+    }
+
+  </style>
+
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">CT</span>
+      <span>CreativeThumb</span>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="all-work.html">Portfolio</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Hire Me</a>
+    </nav>
+  </header>
+
+  <main>
+  <div class="heading">
+  <h1>PORTFOLIO</h1>
+  <p>I'll upload my other designs soon...</p>
+</div>   
+
+
+    <section class="gallery">
+      
+      <article class="work-card">
+        <button class="thumb-button" type="button" data-full="assets/thumb-01.webp" aria-label="View Stop Losing Money">
+          <img loading="lazy" src="assets/thumb-01.webp" alt="Stop Losing Money thumbnail">
+          <span class="view-label">View Design ↗</span>
+          
+        </button>
+        <div class="meta">
+          <h2>Stop Losing Money</h2>
+          <span>Trading</span>
+        </div>
+      </article>
+      <article class="work-card">
+        <button class="thumb-button" type="button" data-full="assets/thumb-02.webp" aria-label="View NQ Scalping">
+          <img loading="lazy" src="assets/thumb-02.webp" alt="NQ Scalping thumbnail">
+          <span class="view-label">View Design ↗</span>
+          
+        </button>
+        <div class="meta">
+          <h2>NQ Scalping</h2>
+          <span>Trading</span>
+        </div>
+      </article>
+      <article class="work-card">
+        <button class="thumb-button" type="button" data-full="assets/thumb-03.webp" aria-label="View Gold Strategy">
+          <img loading="lazy" src="assets/thumb-03.webp" alt="Gold Strategy thumbnail">
+          <span class="view-label">View Design ↗</span>
+          
+        </button>
+        <div class="meta">
+          <h2>Gold Strategy</h2>
+          <span>Trading</span>
+        </div>
+      </article>
+      <article class="work-card">
+        <button class="thumb-button" type="button" data-full="assets/thumb-04.webp" aria-label="View Mindset">
+          <img loading="lazy" src="assets/thumb-04.webp" alt="Mindset thumbnail">
+          <span class="view-label">View Design ↗</span>
+          
+        </button>
+        <div class="meta">
+          <h2>Mindset</h2>
+          <span>Trading</span>
+        </div>
+      </article>
+      <article class="work-card">
+        <button class="thumb-button" type="button" data-full="assets/thumb-05.webp" aria-label="View Grow Small Account">
+          <img loading="lazy" src="assets/thumb-05.webp" alt="Grow Small Account thumbnail">
+          <span class="view-label">View Design ↗</span>
+          
+        </button>
+        <div class="meta">
+          <h2>Grow Small Account</h2>
+          <span>Trading</span>
+        </div>
+      </article>
+      <article class="work-card">
+        <button class="thumb-button" type="button" data-full="assets/thumb-06.webp" aria-label="View Psychology">
+          <img loading="lazy" src="assets/thumb-06.webp" alt="Psychology thumbnail">
+          <span class="view-label">View Design ↗</span>
+          
+        </button>
+        <div class="meta">
+          <h2>Psychology</h2>
+          <span>Trading</span>
+        </div>
+      </article>
+      <article class="work-card">
+        <button class="thumb-button" type="button" data-full="assets/dummy-07.svg" aria-label="View Thumbnail Project 07">
+          <img loading="lazy" src="assets/dummy-07.svg" alt="Thumbnail Project 07 thumbnail">
+          <span class="view-label">View Design ↗</span>
+          <span class="dummy-badge">DUMMY</span>
+        </button>
+        <div class="meta">
+          <h2>Thumbnail Project 07</h2>
+          <span>Portfolio</span>
+        </div>
+      </article>
+      <article class="work-card">
+        <button class="thumb-button" type="button" data-full="assets/dummy-08.svg" aria-label="View Thumbnail Project 08">
+          <img loading="lazy" src="assets/dummy-08.svg" alt="Thumbnail Project 08 thumbnail">
+          <span class="view-label">View Design ↗</span>
+          <span class="dummy-badge">DUMMY</span>
+        </button>
+        <div class="meta">
+          <h2>Thumbnail Project 08</h2>
+          <span>Portfolio</span>
+        </div>
+      </article>
+      <article class="work-card">
+        <button class="thumb-button" type="button" data-full="assets/dummy-09.svg" aria-label="View Thumbnail Project 09">
+          <img loading="lazy" src="assets/dummy-09.svg" alt="Thumbnail Project 09 thumbnail">
+          <span class="view-label">View Design ↗</span>
+          <span class="dummy-badge">DUMMY</span>
+        </button>
+        <div class="meta">
+          <h2>Thumbnail Project 09</h2>
+          <span>Portfolio</span>
+        </div>
+      </article>
+      <article class="work-card">
+        <button class="thumb-button" type="button" data-full="assets/dummy-10.svg" aria-label="View Thumbnail Project 10">
+          <img loading="lazy" src="assets/dummy-10.svg" alt="Thumbnail Project 10 thumbnail">
+          <span class="view-label">View Design ↗</span>
+          <span class="dummy-badge">DUMMY</span>
+        </button>
+        <div class="meta">
+          <h2>Thumbnail Project 10</h2>
+          <span>Portfolio</span>
+        </div>
+      </article>
+      <article class="work-card">
+        <button class="thumb-button" type="button" data-full="assets/dummy-11.svg" aria-label="View Thumbnail Project 11">
+          <img loading="lazy" src="assets/dummy-11.svg" alt="Thumbnail Project 11 thumbnail">
+          <span class="view-label">View Design ↗</span>
+          <span class="dummy-badge">DUMMY</span>
+        </button>
+        <div class="meta">
+          <h2>Thumbnail Project 11</h2>
+          <span>Portfolio</span>
+        </div>
+      </article>
+      <article class="work-card">
+        <button class="thumb-button" type="button" data-full="assets/dummy-12.svg" aria-label="View Thumbnail Project 12">
+          <img loading="lazy" src="assets/dummy-12.svg" alt="Thumbnail Project 12 thumbnail">
+          <span class="view-label">View Design ↗</span>
+          <span class="dummy-badge">DUMMY</span>
+        </button>
+        <div class="meta">
+          <h2>Thumbnail Project 12</h2>
+          <span>Portfolio</span>
+        </div>
+      </article>
+      <article class="work-card">
+        <button class="thumb-button" type="button" data-full="assets/dummy-13.svg" aria-label="View Thumbnail Project 13">
+          <img loading="lazy" src="assets/dummy-13.svg" alt="Thumbnail Project 13 thumbnail">
+          <span class="view-label">View Design ↗</span>
+          <span class="dummy-badge">DUMMY</span>
+        </button>
+        <div class="meta">
+          <h2>Thumbnail Project 13</h2>
+          <span>Portfolio</span>
+        </div>
+      </article>
+      <article class="work-card">
+        <button class="thumb-button" type="button" data-full="assets/dummy-14.svg" aria-label="View Thumbnail Project 14">
+          <img loading="lazy" src="assets/dummy-14.svg" alt="Thumbnail Project 14 thumbnail">
+          <span class="view-label">View Design ↗</span>
+          <span class="dummy-badge">DUMMY</span>
+        </button>
+        <div class="meta">
+          <h2>Thumbnail Project 14</h2>
+          <span>Portfolio</span>
+        </div>
+      </article>
+      <article class="work-card">
+        <button class="thumb-button" type="button" data-full="assets/dummy-15.svg" aria-label="View Thumbnail Project 15">
+          <img loading="lazy" src="assets/dummy-15.svg" alt="Thumbnail Project 15 thumbnail">
+          <span class="view-label">View Design ↗</span>
+          <span class="dummy-badge">DUMMY</span>
+        </button>
+        <div class="meta">
+          <h2>Thumbnail Project 15</h2>
+          <span>Portfolio</span>
+        </div>
+      </article>
+      <article class="work-card">
+        <button class="thumb-button" type="button" data-full="assets/dummy-16.svg" aria-label="View Thumbnail Project 16">
+          <img loading="lazy" src="assets/dummy-16.svg" alt="Thumbnail Project 16 thumbnail">
+          <span class="view-label">View Design ↗</span>
+          <span class="dummy-badge">DUMMY</span>
+        </button>
+        <div class="meta">
+          <h2>Thumbnail Project 16</h2>
+          <span>Portfolio</span>
+        </div>
+      </article>
+      <article class="work-card">
+        <button class="thumb-button" type="button" data-full="assets/dummy-17.svg" aria-label="View Thumbnail Project 17">
+          <img loading="lazy" src="assets/dummy-17.svg" alt="Thumbnail Project 17 thumbnail">
+          <span class="view-label">View Design ↗</span>
+          <span class="dummy-badge">DUMMY</span>
+        </button>
+        <div class="meta">
+          <h2>Thumbnail Project 17</h2>
+          <span>Portfolio</span>
+        </div>
+      </article>
+      <article class="work-card">
+        <button class="thumb-button" type="button" data-full="assets/dummy-18.svg" aria-label="View Thumbnail Project 18">
+          <img loading="lazy" src="assets/dummy-18.svg" alt="Thumbnail Project 18 thumbnail">
+          <span class="view-label">View Design ↗</span>
+          <span class="dummy-badge">DUMMY</span>
+        </button>
+        <div class="meta">
+          <h2>Thumbnail Project 18</h2>
+          <span>Portfolio</span>
+        </div>
+      </article>
+      <article class="work-card">
+        <button class="thumb-button" type="button" data-full="assets/dummy-19.svg" aria-label="View Thumbnail Project 19">
+          <img loading="lazy" src="assets/dummy-19.svg" alt="Thumbnail Project 19 thumbnail">
+          <span class="view-label">View Design ↗</span>
+          <span class="dummy-badge">DUMMY</span>
+        </button>
+        <div class="meta">
+          <h2>Thumbnail Project 19</h2>
+          <span>Portfolio</span>
+        </div>
+      </article>
+      <article class="work-card">
+        <button class="thumb-button" type="button" data-full="assets/dummy-20.svg" aria-label="View Thumbnail Project 20">
+          <img loading="lazy" src="assets/dummy-20.svg" alt="Thumbnail Project 20 thumbnail">
+          <span class="view-label">View Design ↗</span>
+          <span class="dummy-badge">DUMMY</span>
+        </button>
+        <div class="meta">
+          <h2>Thumbnail Project 20</h2>
+          <span>Portfolio</span>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <div class="modal" id="previewModal" role="dialog" aria-modal="true">
+    <button class="close" id="closeModal" aria-label="Close preview">&times;</button>
+    <img id="previewImage" alt="Large thumbnail preview">
+  </div>
+
+  <script>
+    const modal = document.getElementById("previewModal");
+    const preview = document.getElementById("previewImage");
+    const close = document.getElementById("closeModal");
+
+    document.querySelectorAll(".thumb-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        preview.src = button.dataset.full;
+        modal.classList.add("open");
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    function closeModal() {
+      modal.classList.remove("open");
+      preview.removeAttribute("src");
+      document.body.style.overflow = "";
+    }
+
+    close.addEventListener("click", closeModal);
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) closeModal();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeModal();
+    });
+  </script>
+</body>
+</html>
