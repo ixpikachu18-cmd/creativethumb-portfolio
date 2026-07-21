@@ -1425,3 +1425,34 @@ textarea:focus {
     margin-top: 28px !important;
   }
 }
+
+/* =========================================
+   HIDE PORTFOLIO FILTERS AND THUMBNAIL META
+   ========================================= */
+
+/* All / Trading / Finance / Gaming buttons */
+.filter-bar,
+.filters,
+.portfolio-filters,
+.category-filters,
+.filter-buttons {
+  display: none !important;
+}
+
+/* Thumbnail ke neeche title + category */
+.project-meta,
+.project-info,
+.thumbnail-meta,
+.work-meta,
+.card-meta {
+  display: none !important;
+}
+
+/* Meta remove hone ke baad clean spacing */
+.portfolio-grid {
+  row-gap: 28px !important;
+}
+
+.project {
+  margin-bottom: 0 !important;
+}
