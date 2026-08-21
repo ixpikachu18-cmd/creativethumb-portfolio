@@ -141,3 +141,37 @@
     font-size: 48px !important;
   }
 }
+
+/* Portfolio title + category — desktop & mobile */
+.project-meta {
+  display: block !important;
+  padding: 10px 4px 14px;
+  text-align: left;
+}
+
+.project-meta h3 {
+  display: block !important;
+  margin: 0 0 5px;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #111827;
+}
+
+.project-meta p {
+  display: flex !important;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.category-icon {
+  color: #6c4cff;
+  font-size: 12px;
+  line-height: 1;
+}
