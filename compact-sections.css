@@ -175,3 +175,26 @@
   font-size: 12px;
   line-height: 1;
 }
+
+/* ===== DESKTOP / LAPTOP ONLY ===== */
+@media (min-width: 769px) {
+
+  .project-meta {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+  }
+
+  .project-meta h3 {
+    margin: 0 !important;
+  }
+
+  .project-meta p {
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+  }
+
+}
