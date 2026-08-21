@@ -1,42 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>CreativeThumb — All Work</title>
 
   <!-- Favicon -->
-  <link
-    rel="icon"
-    type="image/svg+xml"
-    href="assets/favicon.svg?v=4"
-  >
-
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="32x32"
-    href="assets/favicon-32.png?v=4"
-  >
-
-  <link
-    rel="apple-touch-icon"
-    href="assets/apple-touch-icon.png?v=4"
-  >
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=4">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=4">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=4">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&display=swap"
@@ -44,6 +23,7 @@
   >
 
   <style>
+
     /* =========================
        BASIC RESET
        ========================= */
@@ -235,6 +215,11 @@
       min-width: 0;
     }
 
+
+    /* =========================
+       THUMBNAIL
+       ========================= */
+
     .thumb-button {
       position: relative;
 
@@ -289,11 +274,12 @@
 
 
     /* =========================
-       VIEW DESIGN HOVER BUTTON
+       VIEW DESIGN HOVER
        ========================= */
 
     .view-label {
       position: absolute;
+
       left: 50%;
       top: 50%;
 
@@ -328,26 +314,66 @@
 
 
     /* =========================
-       DUMMY LABEL
+       TITLE + CATEGORY
        ========================= */
 
-    .dummy-badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
+    .work-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-      padding: 7px 10px;
+      gap: 18px;
 
-      border-radius: 6px;
+      margin-top: 10px;
+      padding: 0 4px 2px;
+    }
 
-      color: #ffffff;
+    .work-title {
+      margin: 0;
 
-      background:
-        rgba(15, 23, 42, 0.82);
+      min-width: 0;
+
+      color: #111318;
+
+      font-size: 15px;
+      font-weight: 800;
+
+      line-height: 1.25;
+    }
+
+    .work-category {
+      flex-shrink: 0;
+
+      display: inline-flex;
+      align-items: center;
+
+      gap: 7px;
+
+      margin: 0;
+
+      color: #626b7a;
+
+      font-size: 13px;
+      font-weight: 500;
+
+      white-space: nowrap;
+    }
+
+    .category-icon {
+      width: 18px;
+      height: 18px;
+
+      display: inline-grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      color: #7c3aed;
+
+      background: #f0ebff;
 
       font-size: 10px;
       font-weight: 900;
-      letter-spacing: 1.2px;
     }
 
 
@@ -358,9 +384,11 @@
     .modal {
       position: fixed;
       inset: 0;
+
       z-index: 100;
 
       display: none;
+
       align-items: center;
       justify-content: center;
 
@@ -376,6 +404,7 @@
 
     .modal img {
       width: min(1280px, 94vw);
+
       max-height: 88vh;
 
       object-fit: contain;
@@ -386,12 +415,14 @@
 
     .close {
       position: absolute;
+
       right: 26px;
       top: 18px;
 
       border: 0;
 
       background: transparent;
+
       color: #ffffff;
 
       font-size: 42px;
@@ -406,6 +437,7 @@
        ========================= */
 
     @media (max-width: 1050px) {
+
       main {
         width: min(calc(100% - 36px), 1820px);
       }
@@ -414,6 +446,7 @@
         grid-template-columns:
           repeat(2, minmax(0, 1fr));
       }
+
     }
 
 
@@ -422,6 +455,7 @@
        ========================= */
 
     @media (max-width: 650px) {
+
       .topbar {
         height: 56px;
         padding: 0 16px;
@@ -473,6 +507,30 @@
       .view-label {
         display: none;
       }
+
+      /* TITLE + CATEGORY MOBILE */
+
+      .work-meta {
+        margin-top: 10px;
+        padding: 0 8px 2px;
+
+        gap: 12px;
+      }
+
+      .work-title {
+        font-size: 17px;
+        line-height: 1.25;
+      }
+
+      .work-category {
+        font-size: 14px;
+      }
+
+      .category-icon {
+        width: 20px;
+        height: 20px;
+      }
+
     }
 
 
@@ -481,6 +539,7 @@
        ========================= */
 
     @media (max-width: 430px) {
+
       .topbar nav {
         gap: 10px;
       }
@@ -497,13 +556,33 @@
         font-size: 42px;
         letter-spacing: 5px;
       }
+
+      .work-meta {
+        gap: 8px;
+      }
+
+      .work-title {
+        font-size: 16px;
+      }
+
+      .work-category {
+        font-size: 13px;
+      }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
-  <!-- Header -->
+
+  <!-- =========================
+       HEADER
+       ========================= -->
+
   <header class="topbar">
 
     <a
@@ -516,746 +595,1141 @@
     </a>
 
     <nav aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="all-work.html">Portfolio</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#contact">Hire Me</a>
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="all-work.html">
+        Portfolio
+      </a>
+
+      <a href="index.html#about">
+        About
+      </a>
+
+      <a href="index.html#contact">
+        Hire Me
+      </a>
+
     </nav>
 
   </header>
 
 
-  <!-- Main -->
+  <!-- =========================
+       MAIN
+       ========================= -->
+
   <main>
 
     <div class="heading">
+
       <h1>PORTFOLIO</h1>
-      <p>I'll upload my other designs soon...</p>
+
+      <p>
+        I'll upload my other designs soon...
+      </p>
+
     </div>
 
 
-    <!-- Thumbnail Gallery -->
+    <!-- =========================
+         THUMBNAIL GALLERY
+         ========================= -->
+
     <section
       class="gallery"
       aria-label="Thumbnail portfolio"
     >
 
-      <!-- Thumbnail 1 -->
+
+      <!-- 1. GROCERY -->
+
       <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/Ryan.webp"
-          aria-label="View thumbnail design 1"
+          aria-label="View grocery challenge thumbnail"
         >
+
           <img
             src="assets/Ryan.webp"
-            alt="CreativeThumb thumbnail design 1"
+            alt="$237 Grocery Challenge"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
+
         </button>
+
+        <div class="work-meta">
+
+          <h3 class="work-title">
+            $237 Grocery Challenge
+          </h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Lifestyle
+          </p>
+
+        </div>
+
       </article>
 
 
-      <!-- Thumbnail 2 -->
+      <!-- 2. CAVE -->
+
       <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/cave.webp"
-          aria-label="View thumbnail design 2"
+          aria-label="View cave challenge thumbnail"
         >
+
           <img
             src="assets/cave.webp"
-            alt="CreativeThumb thumbnail design 2"
+            alt="Trapped in a Cave for 3 Days"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
+
         </button>
+
+        <div class="work-meta">
+
+          <h3 class="work-title">
+            Trapped in a Cave for 3 Days
+          </h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Challenge
+          </p>
+
+        </div>
+
       </article>
 
 
-      <!-- Thumbnail 3 -->
+      <!-- 3. FOOTBALL -->
+
       <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/foot.png"
-          aria-label="View thumbnail design 3"
+          aria-label="View football thumbnail"
         >
+
           <img
             src="assets/foot.png"
-            alt="CreativeThumb thumbnail design 3"
+            alt="I Tried to Become a Football Pro"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
+
         </button>
+
+        <div class="work-meta">
+
+          <h3 class="work-title">
+            I Tried to Become a Football Pro
+          </h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Sports
+          </p>
+
+        </div>
+
       </article>
 
-         <article class="work-card">
+
+      <!-- 4. DESERT -->
+
+      <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/un.webp"
-          aria-label="View thumbnail design 3"
+          aria-label="View desert survival thumbnail"
         >
+
           <img
             src="assets/un.webp"
-            alt="CreativeThumb thumbnail design 3"
+            alt="Surviving 24 Hours in the Desert"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
+
         </button>
+
+        <div class="work-meta">
+
+          <h3 class="work-title">
+            Surviving 24 Hours in the Desert
+          </h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Survival
+          </p>
+
+        </div>
+
       </article>
 
 
-      <!-- Thumbnail 4 -->
+      <!-- 5. BEACH -->
+
       <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/bch.webp"
-          aria-label="View thumbnail design 4"
+          aria-label="View vacation thumbnail"
         >
+
           <img
             src="assets/bch.webp"
-            alt="CreativeThumb thumbnail design 4"
+            alt="$1 vs $100,000 Vacation"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
+
         </button>
+
+        <div class="work-meta">
+
+          <h3 class="work-title">
+            $1 vs $100,000 Vacation
+          </h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Travel
+          </p>
+
+        </div>
+
       </article>
 
 
-      <!-- Thumbnail 5 -->
+      <!-- 6. ELEVATOR -->
+
       <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/tjr.webp"
-          aria-label="View thumbnail design 5"
+          aria-label="View secret elevator thumbnail"
         >
+
           <img
             src="assets/tjr.webp"
-            alt="CreativeThumb thumbnail design 5"
+            alt="I Found a Secret Elevator Floor"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
+
         </button>
+
+        <div class="work-meta">
+
+          <h3 class="work-title">
+            I Found a Secret Elevator Floor
+          </h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Mystery
+          </p>
+
+        </div>
+
       </article>
 
 
-      <!-- Thumbnail 6 -->
+      <!-- 7. MR -->
+
       <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/mr.webp"
-          aria-label="View thumbnail design 6"
+          aria-label="View thumbnail design"
         >
+
           <img
             src="assets/mr.webp"
-            alt="CreativeThumb thumbnail design 6"
+            alt="Portfolio thumbnail"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
+
         </button>
+
+        <div class="work-meta">
+          <h3 class="work-title">Your Video Title</h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Category
+          </p>
+        </div>
+
       </article>
 
 
-      <!-- Dummy Thumbnail 7 -->
+      <!-- 8. IMAN -->
+
       <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/IMAN.webp"
-          aria-label="View thumbnail design 7"
+          aria-label="View thumbnail design"
         >
+
           <img
             src="assets/IMAN.webp"
-            alt="CreativeThumb thumbnail design 7"
+            alt="Portfolio thumbnail"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
 
-         
-          </span>
         </button>
+
+        <div class="work-meta">
+          <h3 class="work-title">Your Video Title</h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Category
+          </p>
+        </div>
+
       </article>
 
 
-      <!-- Dummy Thumbnail 8 -->
+      <!-- 9. BRENT -->
+
       <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/brent.webp"
-          aria-label="View thumbnail design 8"
+          aria-label="View thumbnail design"
         >
+
           <img
             src="assets/brent.webp"
-            alt="CreativeThumb thumbnail design 8"
+            alt="Portfolio thumbnail"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
 
-        
-          </span>
         </button>
+
+        <div class="work-meta">
+          <h3 class="work-title">Your Video Title</h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Category
+          </p>
+        </div>
+
       </article>
 
 
-      <!-- Dummy Thumbnail 9 -->
+      <!-- 10. PAUL -->
+
       <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/paul.webp"
-          aria-label="View thumbnail design 9"
+          aria-label="View thumbnail design"
         >
+
           <img
             src="assets/paul.webp"
-            alt="CreativeThumb thumbnail design 9"
+            alt="Portfolio thumbnail"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
 
-         
-          </span>
         </button>
+
+        <div class="work-meta">
+          <h3 class="work-title">Your Video Title</h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Category
+          </p>
+        </div>
+
       </article>
 
 
-      <!-- Dummy Thumbnail 10 -->
+      <!-- 11. STROKE -->
+
       <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/stroke.png"
-          aria-label="View thumbnail design 10"
+          aria-label="View thumbnail design"
         >
+
           <img
             src="assets/stroke.png"
-            alt="CreativeThumb thumbnail design 10"
+            alt="Portfolio thumbnail"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
 
-          
-          </span>
         </button>
+
+        <div class="work-meta">
+          <h3 class="work-title">Your Video Title</h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Category
+          </p>
+        </div>
+
       </article>
 
+
+      <!-- 12. AIR -->
+
       <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/air.webp"
-          aria-label="View thumbnail design 10"
+          aria-label="View thumbnail design"
         >
+
           <img
             src="assets/air.webp"
-            alt="CreativeThumb thumbnail design 10"
+            alt="Portfolio thumbnail"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
 
-          
-          </span>
         </button>
+
+        <div class="work-meta">
+          <h3 class="work-title">Your Video Title</h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Category
+          </p>
+        </div>
+
       </article>
-      
+
+
+      <!-- 13. BEN -->
+
       <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/ben.webp"
-          aria-label="View thumbnail design 10"
+          aria-label="View thumbnail design"
         >
+
           <img
             src="assets/ben.webp"
-            alt="CreativeThumb thumbnail design 10"
+            alt="Portfolio thumbnail"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
 
-          </span>
         </button>
+
+        <div class="work-meta">
+          <h3 class="work-title">Your Video Title</h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Category
+          </p>
+        </div>
+
       </article>
-    
+
+
+      <!-- 14. KSI -->
+
       <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/ksi.webp"
-          aria-label="View thumbnail design 10"
+          aria-label="View thumbnail design"
         >
+
           <img
             src="assets/ksi.webp"
-            alt="CreativeThumb thumbnail design 10"
+            alt="Portfolio thumbnail"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
 
-          
-          </span>
         </button>
+
+        <div class="work-meta">
+          <h3 class="work-title">Your Video Title</h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Category
+          </p>
+        </div>
+
       </article>
-       
+
+
+      <!-- 15. GAMER -->
+
       <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/gamer.webp"
-          aria-label="View thumbnail design 10"
+          aria-label="View gaming thumbnail"
         >
+
           <img
             src="assets/gamer.webp"
-            alt="CreativeThumb thumbnail design 10"
+            alt="Gaming portfolio thumbnail"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
 
-          
-          </span>
         </button>
+
+        <div class="work-meta">
+          <h3 class="work-title">Your Video Title</h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Gaming
+          </p>
+        </div>
+
       </article>
-      
+
+
+      <!-- 16. WILL -->
+
       <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/will.webp"
-          aria-label="View thumbnail design 10"
+          aria-label="View thumbnail design"
         >
+
           <img
             src="assets/will.webp"
-            alt="CreativeThumb thumbnail design 10"
+            alt="Portfolio thumbnail"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
 
-          
-          </span>
         </button>
+
+        <div class="work-meta">
+          <h3 class="work-title">Your Video Title</h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Category
+          </p>
+        </div>
+
       </article>
 
-       <article class="work-card">
+
+      <!-- 17. AI -->
+
+      <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/AI.webp"
-          aria-label="View thumbnail design 10"
+          aria-label="View AI thumbnail"
         >
+
           <img
             src="assets/AI.webp"
-            alt="CreativeThumb thumbnail design 10"
+            alt="AI portfolio thumbnail"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
 
-         
-          </span>
         </button>
+
+        <div class="work-meta">
+          <h3 class="work-title">Your Video Title</h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Technology
+          </p>
+        </div>
+
       </article>
 
+
+      <!-- 18. MRK -->
+
       <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/mrk.webp"
-          aria-label="View thumbnail design 10"
+          aria-label="View thumbnail design"
         >
+
           <img
             src="assets/mrk.webp"
-            alt="CreativeThumb thumbnail design 10"
+            alt="Portfolio thumbnail"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
 
-         
-          </span>
         </button>
+
+        <div class="work-meta">
+          <h3 class="work-title">Your Video Title</h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Category
+          </p>
+        </div>
+
       </article>
 
-<article class="work-card">
+
+      <!-- 19. CAR -->
+
+      <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/car.webp"
-          aria-label="View thumbnail design 10"
+          aria-label="View car thumbnail"
         >
+
           <img
             src="assets/car.webp"
-            alt="CreativeThumb thumbnail design 10"
+            alt="Automotive portfolio thumbnail"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
 
-         
-          </span>
         </button>
+
+        <div class="work-meta">
+          <h3 class="work-title">Your Video Title</h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Automotive
+          </p>
+        </div>
+
       </article>
- 
+
+
+      <!-- 20. INR -->
+
       <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/INR.webp"
-          aria-label="View thumbnail design 10"
+          aria-label="View finance thumbnail"
         >
+
           <img
             src="assets/INR.webp"
-            alt="CreativeThumb thumbnail design 10"
+            alt="Finance portfolio thumbnail"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
 
-         
-          </span>
         </button>
+
+        <div class="work-meta">
+          <h3 class="work-title">Your Video Title</h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Finance
+          </p>
+        </div>
+
       </article>
 
-<article class="work-card">
+
+      <!-- 21. IIT -->
+
+      <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/IIT.webp"
-          aria-label="View thumbnail design 10"
+          aria-label="View education thumbnail"
         >
+
           <img
             src="assets/IIT.webp"
-            alt="CreativeThumb thumbnail design 10"
+            alt="Education portfolio thumbnail"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
 
-          
-          </span>
         </button>
+
+        <div class="work-meta">
+          <h3 class="work-title">Your Video Title</h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Education
+          </p>
+        </div>
+
       </article>
 
+
+      <!-- 22. VORA -->
+
       <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/Vora.webp"
-          aria-label="View thumbnail design 10"
+          aria-label="View education thumbnail"
         >
+
           <img
             src="assets/Vora.webp"
-            alt="CreativeThumb thumbnail design 10"
+            alt="Education portfolio thumbnail"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
 
-          
-          </span>
         </button>
+
+        <div class="work-meta">
+          <h3 class="work-title">Your Video Title</h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Education
+          </p>
+        </div>
+
       </article>
 
+
+      <!-- 23. SHAR -->
+
       <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/shar.webp"
-          aria-label="View thumbnail design 10"
+          aria-label="View thumbnail design"
         >
+
           <img
             src="assets/shar.webp"
-            alt="CreativeThumb thumbnail design 10"
+            alt="Portfolio thumbnail"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
 
-         
-          </span>
         </button>
+
+        <div class="work-meta">
+          <h3 class="work-title">Your Video Title</h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Category
+          </p>
+        </div>
+
       </article>
 
+
+      <!-- 24. ALEX -->
+
       <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/Alex.webp"
-          aria-label="View thumbnail design 10"
+          aria-label="View thumbnail design"
         >
+
           <img
             src="assets/Alex.webp"
-            alt="CreativeThumb thumbnail design 10"
+            alt="Portfolio thumbnail"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
 
-          
-          </span>
         </button>
+
+        <div class="work-meta">
+          <h3 class="work-title">Your Video Title</h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Category
+          </p>
+        </div>
+
       </article>
 
+
+      <!-- 25. STREET -->
+
       <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/street.webp"
-          aria-label="View thumbnail design 10"
+          aria-label="View thumbnail design"
         >
+
           <img
             src="assets/street.webp"
-            alt="CreativeThumb thumbnail design 10"
+            alt="Portfolio thumbnail"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
 
-          
-          </span>
         </button>
+
+        <div class="work-meta">
+          <h3 class="work-title">Your Video Title</h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Lifestyle
+          </p>
+        </div>
+
       </article>
 
+
+      <!-- 26. THUMB 07 -->
+
       <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/thumb-07.jpg"
-          aria-label="View thumbnail design 10"
+          aria-label="View thumbnail design"
         >
+
           <img
             src="assets/thumb-07.jpg"
-            alt="CreativeThumb thumbnail design 10"
+            alt="Portfolio thumbnail"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
 
-         
-          </span>
         </button>
+
+        <div class="work-meta">
+          <h3 class="work-title">Your Video Title</h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Category
+          </p>
+        </div>
+
       </article>
 
+
+      <!-- 27. THUMB 02 -->
+
       <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/thumb-02.webp"
-          aria-label="View thumbnail design 10"
+          aria-label="View thumbnail design"
         >
+
           <img
             src="assets/thumb-02.webp"
-            alt="CreativeThumb thumbnail design 10"
+            alt="Portfolio thumbnail"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
 
-         
-          </span>
         </button>
+
+        <div class="work-meta">
+          <h3 class="work-title">Your Video Title</h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Category
+          </p>
+        </div>
+
       </article>
 
+
+      <!-- 28. THUMB 05 -->
+
       <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/thumb-05.webp"
-          aria-label="View thumbnail design 10"
+          aria-label="View thumbnail design"
         >
+
           <img
             src="assets/thumb-05.webp"
-            alt="CreativeThumb thumbnail design 10"
+            alt="Portfolio thumbnail"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
 
-        
-          </span>
         </button>
+
+        <div class="work-meta">
+          <h3 class="work-title">Your Video Title</h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Category
+          </p>
+        </div>
+
       </article>
 
+
+      <!-- 29. THUMB 03 -->
+
       <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/thumb-03.webp"
-          aria-label="View thumbnail design 10"
+          aria-label="View thumbnail design"
         >
+
           <img
             src="assets/thumb-03.webp"
-            alt="CreativeThumb thumbnail design 10"
+            alt="Portfolio thumbnail"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
 
-         
-          </span>
         </button>
+
+        <div class="work-meta">
+          <h3 class="work-title">Your Video Title</h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Category
+          </p>
+        </div>
+
       </article>
 
+
+      <!-- 30. THUMB 01 -->
+
       <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/thumb-01.webp"
-          aria-label="View thumbnail design 10"
+          aria-label="View thumbnail design"
         >
+
           <img
             src="assets/thumb-01.webp"
-            alt="CreativeThumb thumbnail design 10"
+            alt="Portfolio thumbnail"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
 
-         
-          </span>
         </button>
+
+        <div class="work-meta">
+          <h3 class="work-title">Your Video Title</h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Category
+          </p>
+        </div>
+
       </article>
 
+
+      <!-- 31. THUMB 04 -->
+
       <article class="work-card">
+
         <button
           class="thumb-button"
           type="button"
           data-full="assets/thumb-04.webp"
-          aria-label="View thumbnail design 10"
+          aria-label="View thumbnail design"
         >
+
           <img
             src="assets/thumb-04.webp"
-            alt="CreativeThumb thumbnail design 10"
+            alt="Portfolio thumbnail"
           >
 
           <span class="view-label">
             View Design ↗
           </span>
 
-         
-          </span>
         </button>
+
+        <div class="work-meta">
+          <h3 class="work-title">Your Video Title</h3>
+
+          <p class="work-category">
+            <span class="category-icon">✦</span>
+            Category
+          </p>
+        </div>
+
       </article>
 
-      <article class="work-card">
-        <button
-          class="thumb-button"
-          type="button"
-          data-full="assets/thumb-03.webp"
-          aria-label="View thumbnail design 10"
-        >
-          <img
-            src="assets/thumb-03.webp"
-            alt="CreativeThumb thumbnail design 10"
-          >
-
-          <span class="view-label">
-            View Design ↗
-          </span>
-
-         
-          </span>
-        </button>
-      </article>
-
-      <article class="work-card">
-        <button
-          class="thumb-button"
-          type="button"
-          data-full="assets/thumb-03.webp"
-          aria-label="View thumbnail design 10"
-        >
-          <img
-            src="assets/thumb-03.webp"
-            alt="CreativeThumb thumbnail design 10"
-          >
-
-          <span class="view-label">
-            View Design ↗
-          </span>
-
-          
-          </span>
-        </button>
-      </article>
-
-      <article class="work-card">
-        <button
-          class="thumb-button"
-          type="button"
-          data-full="assets/thumb-03.webp"
-          aria-label="View thumbnail design 10"
-        >
-          <img
-            src="assets/thumb-03.webp"
-            alt="CreativeThumb thumbnail design 10"
-          >
-
-          <span class="view-label">
-            View Design ↗
-          </span>
-
-         
-          </span>
-        </button>
-      </article>
-      
     </section>
+
   </main>
 
 
-  <!-- Full Image Preview -->
+  <!-- =========================
+       FULL IMAGE PREVIEW
+       ========================= -->
+
   <div
     class="modal"
     id="previewModal"
@@ -1282,7 +1756,12 @@
   </div>
 
 
+  <!-- =========================
+       MODAL JAVASCRIPT
+       ========================= -->
+
   <script>
+
     const modal =
       document.getElementById("previewModal");
 
@@ -1359,13 +1838,15 @@
           event.key === "Escape" &&
           modal.classList.contains("open")
         ) {
+
           closeModal();
+
         }
 
       }
     );
+
   </script>
 
 </body>
 </html>
-    
