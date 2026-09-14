@@ -1,0 +1,20 @@
+CREATIVETHUMB IMAGE OPTIMIZATION REPORT
+=======================================
+
+Thumbnails: 1280 x 720 WebP, quality 82
+Profile photo: 720 px wide WebP, quality 82
+
+thumb-01.png: 1981.8 KB -> thumb-01.webp: 92.7 KB
+thumb-02.png: 2796.7 KB -> thumb-02.webp: 164.0 KB
+thumb-03.png: 2562.3 KB -> thumb-03.webp: 152.0 KB
+thumb-04.png: 3124.9 KB -> thumb-04.webp: 118.5 KB
+thumb-05.png: 1890.4 KB -> thumb-05.webp: 120.8 KB
+thumb-06.png: 1991.8 KB -> thumb-06.webp: 83.4 KB
+vinay-pic.png: 1833.1 KB -> vinay-pic.webp: 98.9 KB
+
+Total before: 15.80 MB
+Total after:  0.81 MB
+Space saved:  94.9%
+
+index.html and all-work.html paths are already updated.
+This ZIP is ready for GitHub Pages upload.
