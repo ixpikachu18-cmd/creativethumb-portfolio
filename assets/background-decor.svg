@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="p1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9d8cff" stop-opacity=".12"/><stop offset="1" stop-color="#58c7ff" stop-opacity=".035"/></linearGradient>
+    <linearGradient id="p2" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#6c58ef" stop-opacity=".12"/><stop offset="1" stop-color="#c785ff" stop-opacity=".035"/></linearGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="12"/></filter>
+  </defs>
+  <!-- soft ambient glows -->
+  <circle cx="120" cy="120" r="150" fill="#8d7dff" opacity=".045" filter="url(#blur)"/>
+  <circle cx="1480" cy="130" r="180" fill="#b980ff" opacity=".045" filter="url(#blur)"/>
+  <circle cx="240" cy="910" r="170" fill="#7c8fff" opacity=".035" filter="url(#blur)"/>
+
+  <!-- top-left abstract tilted card -->
+  <g transform="translate(55 105) rotate(24)" opacity=".52">
+    <path d="M0 0h58v42H0z" fill="url(#p1)"/>
+    <path d="M8 8h42v26H8z" fill="none" stroke="#8b86ff" stroke-opacity=".18" stroke-width="2"/>
+  </g>
+  <path d="M118 248l42 24-42 24-42-24z" fill="url(#p1)" opacity=".38"/>
+  <path d="M118 258l33 19-33 19-33-19z" fill="none" stroke="#8291ff" stroke-opacity=".12"/>
+
+  <!-- upper right floating polygons -->
+  <g opacity=".45">
+    <path d="M1390 42l44 25v50l-44 25-44-25V67z" fill="url(#p1)"/>
+    <path d="M1398 56l28 16v34l-28 16-28-16V72z" fill="none" stroke="#8d86ff" stroke-opacity=".16" stroke-width="3"/>
+    <path d="M1510 95l30 17v34l-30 17-30-17v-34z" fill="url(#p2)"/>
+  </g>
+
+  <!-- subtle center-left lines and particles -->
+  <g stroke="#776df4" stroke-opacity=".11" fill="none">
+    <path d="M0 520C150 420 235 410 345 460" stroke-width="2"/>
+    <path d="M22 542C155 455 250 452 350 490" stroke-width="1"/>
+  </g>
+  <g fill="#7f73ff" opacity=".24"><circle cx="360" cy="185" r="3"/><circle cx="400" cy="220" r="2"/><circle cx="1200" cy="330" r="2"/><circle cx="1280" cy="390" r="3"/><circle cx="90" cy="760" r="2"/><circle cx="1480" cy="740" r="2"/></g>
+
+  <!-- bottom / side abstract shapes -->
+  <g opacity=".34">
+    <path d="M78 810l52-30 52 30v60l-52 30-52-30z" fill="url(#p2)"/>
+    <path d="M1410 735l62-36 62 36v72l-62 36-62-36z" fill="url(#p1)"/>
+    <path d="M1445 755l28-16 28 16v32l-28 16-28-16z" fill="none" stroke="#7c82f4" stroke-opacity=".13" stroke-width="3"/>
+  </g>
+  <g transform="translate(1180 840) rotate(-16)" opacity=".25"><rect x="0" y="0" width="74" height="18" rx="5" fill="url(#p1)"/></g>
+  <g transform="translate(290 890) rotate(28)" opacity=".25"><rect x="0" y="0" width="52" height="16" rx="4" fill="url(#p2)"/></g>
+</svg>
