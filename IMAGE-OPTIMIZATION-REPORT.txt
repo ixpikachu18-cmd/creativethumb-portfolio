@@ -1,0 +1,12 @@
+CREATIVETHUMB PERFORMANCE OPTIMIZATION REPORT
+==============================================
+
+High-quality image optimization: WebP quality 92, source dimensions preserved.
+Gallery images use lazy loading + async decoding; hero images load eagerly.
+Tiny icons/favicon files are left untouched.
+
+Converted raster assets: 43
+Converted bytes: 56.8 MB -> 28.5 MB
+Approx. savings on converted assets: 49.8%
+
+Quality note: image dimensions are preserved; no low-resolution thumbnail copies were introduced.
