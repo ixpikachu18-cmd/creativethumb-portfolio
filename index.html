@@ -231,6 +231,21 @@
     const siteLoader = document.getElementById('siteLoader');
     window.addEventListener('load', () => {
       setTimeout(() => siteLoader.classList.add('hidden'), 1450);
+
+      window.addEventListener('pageshow', (event) => {
+  if (event.persisted) {
+    siteLoader?.classList.add('hidden');
+
+    const pageTransition = document.getElementById('pageTransition');
+
+    if (pageTransition) {
+      pageTransition.classList.remove('show');
+      pageTransition.style.opacity = '0';
+      pageTransition.style.visibility = 'hidden';
+      pageTransition.style.pointerEvents = 'none';
+    }
+  }
+});
     });
 
     const transition = document.getElementById('pageTransition');
