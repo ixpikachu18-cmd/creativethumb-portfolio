@@ -228,27 +228,31 @@
   </div>
 
   <script>
-    const siteLoader = document.getElementById('siteLoader');
+    let siteLoader = document.getElementById('siteLoader');
     window.addEventListener('load', () => {
       setTimeout(() => siteLoader.classList.add('hidden'), 1450);
-
-      window.addEventListener('pageshow', (event) => {
-  if (event.persisted) {
-    siteLoader?.classList.add('hidden');
-
-    const pageTransition = document.getElementById('pageTransition');
-
-    if (pageTransition) {
-      pageTransition.classList.remove('show');
-      pageTransition.style.opacity = '0';
-      pageTransition.style.visibility = 'hidden';
-      pageTransition.style.pointerEvents = 'none';
-    }
-  }
-});
     });
 
     const transition = document.getElementById('pageTransition');
+
+    // Restore the full category loader when Chrome returns here via Back/Forward cache.
+    window.addEventListener('pageshow', (event) => {
+      if (!event.persisted) return;
+
+      const freshLoader = siteLoader.cloneNode(true);
+      freshLoader.classList.remove('hidden');
+      siteLoader.replaceWith(freshLoader);
+      siteLoader = freshLoader;
+
+      // The category-page transition overlay may have been frozen in the cached page.
+      transition.classList.remove('show');
+      transition.setAttribute('aria-hidden', 'true');
+      cancelAnimationFrame(raf);
+
+      setTimeout(() => {
+        siteLoader.classList.add('hidden');
+      }, 1450);
+    });
     const label = document.getElementById('transitionLabel');
     const icon = document.getElementById('transitionIcon');
     const canvas = document.getElementById('transitionParticles');
