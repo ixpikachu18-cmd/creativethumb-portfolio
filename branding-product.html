@@ -433,19 +433,304 @@ header.topbar nav a.hire:hover{transform:translateY(-1px) !important;color:#fff 
   <div class="section-head"><div><div class="section-kicker">FEATURED WORK</div><h2>Selected Branding &amp; Product Projects</h2></div><a href="#projects">View All →</a></div>
   <div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="branding">Brand Identity</button><button class="filter" data-filter="packaging">Packaging</button><button class="filter" data-filter="product">Product Design</button><button class="filter" data-filter="visual">Visual Systems</button><button class="filter" data-filter="label">Label Design</button></div>
   <div class="projects" id="projectGrid">
-    <button class="card" type="button" data-cat="branding packaging" data-image="assets/mat.png" data-title="Auric Skincare — Brand Identity & Packaging" aria-label="Open Auric Skincare design"><div class="thumb auric"><img class="project-image" src="assets/mat.png" alt="Auric Skincare — Brand Identity & Packaging" decoding="async" loading="eager"></div><div class="project-copy"><h3>Auric Skincare</h3><p>Brand Identity &amp; Packaging</p></div></button>
-    <button class="card" type="button" data-cat="packaging branding" data-image="assets/plate.png" data-title="Fuel — Supplement Packaging" aria-label="Open Fuel design"><div class="thumb fuel"><img class="project-image" src="assets/plate.png" alt="Fuel — Supplement Packaging" decoding="async" loading="eager"></div><div class="project-copy"><h3>Fuel</h3><p>Supplement Packaging</p></div></button>
-    <button class="card" type="button" data-cat="product" data-image="assets/hot.png" data-title="NEXO — Product Design" aria-label="Open NEXO design"><div class="thumb nexo"><img class="project-image" src="assets/hot.png" alt="NEXO — Product Design" decoding="async" loading="eager"></div><div class="project-copy"><h3>NEXO</h3><p>Product Design</p></div></button>
-    <button class="card" type="button" data-cat="branding packaging" data-image="assets/brand-card-04.png" data-title="Roast — Branding & Packaging" aria-label="Open Roast design"><div class="thumb roast"><img class="project-image" src="assets/brand-card-04.png" alt="Roast — Branding & Packaging" loading="lazy" decoding="async"></div><div class="project-copy"><h3>Roast</h3><p>Branding &amp; Packaging</p></div></button>
-    <button class="card" type="button" data-cat="branding visual" data-image="assets/brand-card-05.png" data-title="Verda — Skincare Brand Identity" aria-label="Open Verda design"><div class="thumb verda"><img class="project-image" src="assets/brand-card-05.png" alt="Verda — Skincare Brand Identity" loading="lazy" decoding="async"></div><div class="project-copy"><h3>Verda</h3><p>Skincare Brand Identity</p></div></button>
-    <button class="card" type="button" data-cat="packaging label" data-image="assets/brand-card-06.png" data-title="Lume — Fragrance Packaging" aria-label="Open Lume design"><div class="thumb lume"><img class="project-image" src="assets/brand-card-06.png" alt="Lume — Fragrance Packaging" loading="lazy" decoding="async"></div><div class="project-copy"><h3>Lume</h3><p>Fragrance Packaging</p></div></button>
 
-    <button class="card" type="button" data-cat="packaging branding visual" data-image="assets/brand-card-07.png" data-title="Terra — Sustainable Packaging" aria-label="Open Terra design"><div class="thumb terra"><img class="project-image" src="assets/brand-card-07.png" alt="Terra — Sustainable Packaging" loading="lazy" decoding="async"></div><div class="project-copy"><h3>Terra</h3><p>Sustainable Packaging</p></div></button>
-    <button class="card" type="button" data-cat="product visual" data-image="assets/brand-card-08.png" data-title="Drift — Tech Accessories" aria-label="Open Drift design"><div class="thumb drift"><img class="project-image" src="assets/brand-card-08.png" alt="Drift — Tech Accessories" loading="lazy" decoding="async"></div><div class="project-copy"><h3>Drift</h3><p>Tech Accessories</p></div></button>
-    <button class="card" type="button" data-cat="branding packaging" data-image="assets/brand-card-09.png" data-title="Nova — Fragrance Brand" aria-label="Open Nova design"><div class="thumb nova"><img class="project-image" src="assets/brand-card-09.png" alt="Nova — Fragrance Brand" loading="lazy" decoding="async"></div><div class="project-copy"><h3>Nova</h3><p>Fragrance Brand</p></div></button>
-    <button class="card" type="button" data-cat="branding visual" data-image="assets/brand-card-10.png" data-title="Aster — Wellness Brand Identity" aria-label="Open Aster design"><div class="thumb aster"><img class="project-image" src="assets/brand-card-10.png" alt="Aster — Wellness Brand Identity" loading="lazy" decoding="async"></div><div class="project-copy"><h3>Aster</h3><p>Wellness Brand Identity</p></div></button>
-    <button class="card" type="button" data-cat="product branding" data-image="assets/brand-card-11.png" data-title="Forma — Lifestyle Product Design" aria-label="Open Forma design"><div class="thumb forma"><img class="project-image" src="assets/brand-card-11.png" alt="Forma — Lifestyle Product Design" loading="lazy" decoding="async"></div><div class="project-copy"><h3>Forma</h3><p>Lifestyle Product Design</p></div></button>
-    <button class="card" type="button" data-cat="branding visual" data-image="assets/brand-card-12.png" data-title="Mono — Visual Identity System" aria-label="Open Mono design"><div class="thumb mono"><img class="project-image" src="assets/brand-card-12.png" alt="Mono — Visual Identity System" loading="lazy" decoding="async"></div><div class="project-copy"><h3>Mono</h3><p>Visual Identity System</p></div></button>
+    <!-- =========================================================
+         BRANDING / PRODUCT CARDS
+         Update each card below independently when replacing a design.
+         Change these 4 things together:
+         1) data-image
+         2) img src
+         3) img alt / data-title
+         4) <h3> + <p>
+         ========================================================= -->
+
+    <!-- BRAND CARD 01 -->
+    <button
+      class="card"
+      type="button"
+      data-cat="branding packaging"
+      data-image="assets/mat.png"
+      data-title="Auric Skincare — Brand Identity & Packaging"
+      aria-label="Open Auric Skincare design"
+    >
+      <div class="thumb auric">
+        <img
+          class="project-image"
+          src="assets/mat.png"
+          alt="Auric Skincare — Brand Identity & Packaging"
+          decoding="async"
+          loading="eager"
+        >
+      </div>
+      <div class="project-copy">
+        <h3>Auric Skincare</h3>
+        <p>Brand Identity &amp; Packaging</p>
+      </div>
+    </button>
+
+    <!-- BRAND CARD 02 -->
+    <button
+      class="card"
+      type="button"
+      data-cat="packaging branding"
+      data-image="assets/plate.png"
+      data-title="Fuel — Supplement Packaging"
+      aria-label="Open Fuel design"
+    >
+      <div class="thumb fuel">
+        <img
+          class="project-image"
+          src="assets/plate.png"
+          alt="Fuel — Supplement Packaging"
+          decoding="async"
+          loading="eager"
+        >
+      </div>
+      <div class="project-copy">
+        <h3>Fuel</h3>
+        <p>Supplement Packaging</p>
+      </div>
+    </button>
+
+    <!-- BRAND CARD 03 -->
+    <button
+      class="card"
+      type="button"
+      data-cat="product"
+      data-image="assets/hot.png"
+      data-title="NEXO — Product Design"
+      aria-label="Open NEXO design"
+    >
+      <div class="thumb nexo">
+        <img
+          class="project-image"
+          src="assets/hot.png"
+          alt="NEXO — Product Design"
+          decoding="async"
+          loading="eager"
+        >
+      </div>
+      <div class="project-copy">
+        <h3>NEXO</h3>
+        <p>Product Design</p>
+      </div>
+    </button>
+
+    <!-- BRAND CARD 04 -->
+    <button
+      class="card"
+      type="button"
+      data-cat="branding packaging"
+      data-image="assets/brand-card-04.png"
+      data-title="Roast — Branding & Packaging"
+      aria-label="Open Roast design"
+    >
+      <div class="thumb roast">
+        <img
+          class="project-image"
+          src="assets/brand-card-04.png"
+          alt="Roast — Branding & Packaging"
+          decoding="async"
+          loading="lazy"
+        >
+      </div>
+      <div class="project-copy">
+        <h3>Roast</h3>
+        <p>Branding &amp; Packaging</p>
+      </div>
+    </button>
+
+    <!-- BRAND CARD 05 -->
+    <button
+      class="card"
+      type="button"
+      data-cat="branding visual"
+      data-image="assets/brand-card-05.png"
+      data-title="Verda — Skincare Brand Identity"
+      aria-label="Open Verda design"
+    >
+      <div class="thumb verda">
+        <img
+          class="project-image"
+          src="assets/brand-card-05.png"
+          alt="Verda — Skincare Brand Identity"
+          decoding="async"
+          loading="lazy"
+        >
+      </div>
+      <div class="project-copy">
+        <h3>Verda</h3>
+        <p>Skincare Brand Identity</p>
+      </div>
+    </button>
+
+    <!-- BRAND CARD 06 -->
+    <button
+      class="card"
+      type="button"
+      data-cat="packaging label"
+      data-image="assets/brand-card-06.png"
+      data-title="Lume — Fragrance Packaging"
+      aria-label="Open Lume design"
+    >
+      <div class="thumb lume">
+        <img
+          class="project-image"
+          src="assets/brand-card-06.png"
+          alt="Lume — Fragrance Packaging"
+          decoding="async"
+          loading="lazy"
+        >
+      </div>
+      <div class="project-copy">
+        <h3>Lume</h3>
+        <p>Fragrance Packaging</p>
+      </div>
+    </button>
+
+    <!-- BRAND CARD 07 -->
+    <button
+      class="card"
+      type="button"
+      data-cat="packaging branding visual"
+      data-image="assets/brand-card-07.png"
+      data-title="Terra — Sustainable Packaging"
+      aria-label="Open Terra design"
+    >
+      <div class="thumb terra">
+        <img
+          class="project-image"
+          src="assets/brand-card-07.png"
+          alt="Terra — Sustainable Packaging"
+          decoding="async"
+          loading="lazy"
+        >
+      </div>
+      <div class="project-copy">
+        <h3>Terra</h3>
+        <p>Sustainable Packaging</p>
+      </div>
+    </button>
+
+    <!-- BRAND CARD 08 -->
+    <button
+      class="card"
+      type="button"
+      data-cat="product visual"
+      data-image="assets/brand-card-08.png"
+      data-title="Drift — Tech Accessories"
+      aria-label="Open Drift design"
+    >
+      <div class="thumb drift">
+        <img
+          class="project-image"
+          src="assets/brand-card-08.png"
+          alt="Drift — Tech Accessories"
+          decoding="async"
+          loading="lazy"
+        >
+      </div>
+      <div class="project-copy">
+        <h3>Drift</h3>
+        <p>Tech Accessories</p>
+      </div>
+    </button>
+
+    <!-- BRAND CARD 09 -->
+    <button
+      class="card"
+      type="button"
+      data-cat="branding packaging"
+      data-image="assets/brand-card-09.png"
+      data-title="Nova — Fragrance Brand"
+      aria-label="Open Nova design"
+    >
+      <div class="thumb nova">
+        <img
+          class="project-image"
+          src="assets/brand-card-09.png"
+          alt="Nova — Fragrance Brand"
+          decoding="async"
+          loading="lazy"
+        >
+      </div>
+      <div class="project-copy">
+        <h3>Nova</h3>
+        <p>Fragrance Brand</p>
+      </div>
+    </button>
+
+    <!-- BRAND CARD 10 -->
+    <button
+      class="card"
+      type="button"
+      data-cat="branding visual"
+      data-image="assets/brand-card-10.png"
+      data-title="Aster — Wellness Brand Identity"
+      aria-label="Open Aster design"
+    >
+      <div class="thumb aster">
+        <img
+          class="project-image"
+          src="assets/brand-card-10.png"
+          alt="Aster — Wellness Brand Identity"
+          decoding="async"
+          loading="lazy"
+        >
+      </div>
+      <div class="project-copy">
+        <h3>Aster</h3>
+        <p>Wellness Brand Identity</p>
+      </div>
+    </button>
+
+    <!-- BRAND CARD 11 -->
+    <button
+      class="card"
+      type="button"
+      data-cat="product branding"
+      data-image="assets/brand-card-11.png"
+      data-title="Forma — Lifestyle Product Design"
+      aria-label="Open Forma design"
+    >
+      <div class="thumb forma">
+        <img
+          class="project-image"
+          src="assets/brand-card-11.png"
+          alt="Forma — Lifestyle Product Design"
+          decoding="async"
+          loading="lazy"
+        >
+      </div>
+      <div class="project-copy">
+        <h3>Forma</h3>
+        <p>Lifestyle Product Design</p>
+      </div>
+    </button>
+
+    <!-- BRAND CARD 12 -->
+    <button
+      class="card"
+      type="button"
+      data-cat="branding visual"
+      data-image="assets/brand-card-12.png"
+      data-title="Mono — Visual Identity System"
+      aria-label="Open Mono design"
+    >
+      <div class="thumb mono">
+        <img
+          class="project-image"
+          src="assets/brand-card-12.png"
+          alt="Mono — Visual Identity System"
+          decoding="async"
+          loading="lazy"
+        >
+      </div>
+      <div class="project-copy">
+        <h3>Mono</h3>
+        <p>Visual Identity System</p>
+      </div>
+    </button>
   </div>
 </section>
 
